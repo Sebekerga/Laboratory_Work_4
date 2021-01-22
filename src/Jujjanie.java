@@ -9,11 +9,25 @@ public class Jujjanie {
     }
 
     String get_full_jujjanie(){
-        String jujjanie = "жу";
-        for(int i = 0; i < number_of_j; i++)
-            jujjanie += "ж";
-        jujjanie += "ание";
+        StrictlyJujjanie strictlyJujjanie = new StrictlyJujjanie();
+        strictlyJujjanie.set_number_of_j(number_of_j);
 
-        return jujjanie;
+        return "жу" + strictlyJujjanie.get_strict_jujjanie() + "ание";
+    }
+
+    class StrictlyJujjanie{
+        int strict_number_of_j = 2;
+
+        void set_number_of_j(int n){
+            strict_number_of_j = n;
+        }
+
+        String get_strict_jujjanie(){
+            String jujjanie = "";
+            for(int i = 0; i < strict_number_of_j; i++)
+                jujjanie += "ж";
+
+            return jujjanie;
+        }
     }
 }
